@@ -66,28 +66,40 @@ export default function Index() {
     <div className="min-h-screen bg-white font-body text-[#0f0f0f]">
 
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#f0f0f0]">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#111] backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
+          {/* ЛОГОТИП */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-heading text-sm font-500 tracking-[0.15em] uppercase text-[#0f0f0f]"
+            className="flex-shrink-0 w-11 h-11 rounded-full border-2 border-[hsl(40,55%,48%)] flex items-center justify-center"
           >
-            Алина Тер-Акопова
+            <span className="font-display text-sm font-semibold text-[hsl(40,55%,48%)] leading-none">АТ</span>
           </button>
+
+          {/* ССЫЛКИ */}
           <div className="hidden md:flex items-center gap-10">
-            {["Экспертиза", "Клиенты", "Стоимость", "Контакты"].map((item) => (
+            {[
+              ["Клиенты", "клиенты"],
+              ["Рекомендации", "рекомендации"],
+              ["Продукты", "продукты"],
+              ["Стоимость", "стоимость"],
+              ["Вопросы", "вопросы"],
+              ["Контакты", "контакты"],
+            ].map(([label, id]) => (
               <button
-                key={item}
-                onClick={() => scrollTo(item.toLowerCase())}
-                className="text-xs font-body font-light text-[#888] hover:text-[#0f0f0f] transition-colors tracking-wide"
+                key={id}
+                onClick={() => scrollTo(id)}
+                className="text-sm font-body font-light text-white/70 hover:text-white transition-colors tracking-wide"
               >
-                {item}
+                {label}
               </button>
             ))}
           </div>
+
+          {/* КНОПКА */}
           <button
             onClick={() => scrollTo("контакты")}
-            className="bg-[#0f0f0f] text-white text-xs px-6 py-2.5 font-body font-light tracking-widest uppercase hover:bg-[hsl(28,60%,52%)] transition-all duration-300"
+            className="bg-[#333] text-white text-sm px-6 py-2 font-body font-light tracking-wide hover:bg-[hsl(40,55%,48%)] hover:text-[#111] transition-all duration-300 rounded-sm"
           >
             Записаться
           </button>
