@@ -1,4 +1,4 @@
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/2d30cba3-c867-4b7e-a3dd-90b59ba425fb/bucket/d154da29-d981-47f6-90c2-c47b15ba31aa.jpg";
+const HERO_IMAGE = "https://cdn.poehali.dev/files/d25099c3-0805-44d5-aec8-5a24db6d905d.png";
 
 const BG = "#0d1f1a";
 const BG2 = "#112018";
@@ -113,35 +113,30 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
 
           {/* ФОТО — слева */}
           <div className="relative hidden md:flex justify-center items-end h-full animate-fade-in order-1" style={{ animationDelay: "0.3s" }}>
+            {/* золотое свечение за силуэтом */}
             <div className="absolute pointer-events-none" style={{
-              inset: "5% 10%",
-              background: `radial-gradient(ellipse 55% 75% at 48% 38%, rgba(180,135,55,0.22) 0%, rgba(180,135,55,0.08) 45%, transparent 70%)`,
-              filter: "blur(24px)",
+              inset: "8% 12%",
+              background: `radial-gradient(ellipse 60% 70% at 50% 40%, rgba(180,135,55,0.25) 0%, rgba(180,135,55,0.1) 40%, transparent 70%)`,
+              filter: "blur(30px)",
               zIndex: 0,
             }} />
             <div className="absolute pointer-events-none" style={{
-              inset: "10% 15%",
-              background: `radial-gradient(ellipse 40% 60% at 48% 32%, rgba(220,170,80,0.12) 0%, transparent 65%)`,
-              filter: "blur(40px)",
+              inset: "15% 18%",
+              background: `radial-gradient(ellipse 45% 55% at 50% 35%, rgba(220,170,80,0.15) 0%, transparent 60%)`,
+              filter: "blur(50px)",
               zIndex: 0,
             }} />
             <img
               src={HERO_IMAGE}
               alt="Алина Тер-Акопова"
-              className="object-cover object-top w-full relative"
+              className="object-contain object-bottom w-full relative"
               style={{
-                maxHeight: "92vh",
+                maxHeight: "88vh",
                 zIndex: 1,
-                maskImage: `
-                  radial-gradient(ellipse 78% 88% at 50% 42%, black 30%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 70%, transparent 88%)
-                `,
-                WebkitMaskImage: `
-                  radial-gradient(ellipse 78% 88% at 50% 42%, black 30%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 70%, transparent 88%)
-                `,
-                filter: "contrast(1.08) brightness(1.02) saturate(0.9)",
+                filter: "drop-shadow(0 0 40px rgba(180,135,55,0.15)) drop-shadow(0 0 80px rgba(180,135,55,0.08))",
               }}
             />
-            <div className="absolute bottom-12 right-4 rounded-lg px-5 py-4 max-w-[220px]"
+            <div className="absolute bottom-8 right-4 rounded-lg px-5 py-4 max-w-[220px]"
               style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(16px)", border: `1px solid ${GOLD}44`, zIndex: 2 }}>
               <p className="text-sm font-light leading-snug" style={{ color: "rgba(255,255,255,0.85)" }}>
                 Более 1500 часов индивидуального коучинга за последние 5 лет
