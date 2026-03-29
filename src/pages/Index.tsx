@@ -126,7 +126,7 @@ export default function Index() {
 
         <div className="max-w-7xl mx-auto px-8 w-full grid md:grid-cols-2 items-center relative z-10">
           {/* ТЕКСТ — слева */}
-          <div className="py-24 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <div className="py-24 animate-fade-in order-2 md:order-1" style={{ animationDelay: "0.1s" }}>
             <h1 className="font-black text-5xl md:text-6xl lg:text-7xl uppercase leading-tight mb-4" style={{ color: "#fff", letterSpacing: "-0.01em" }}>
               Алина<br />Тер-Акопова
             </h1>
@@ -173,7 +173,7 @@ export default function Index() {
           </div>
 
           {/* ФОТО — справа */}
-          <div className="relative hidden md:flex justify-center items-end h-full animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <div className="relative hidden md:flex justify-center items-end h-full animate-fade-in order-1 md:order-2" style={{ animationDelay: "0.3s" }}>
             <img
               src={HERO_IMAGE}
               alt="Алина Тер-Акопова"
