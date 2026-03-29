@@ -145,30 +145,51 @@ export default function Index() {
           style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.3) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.3) 60px)" }}
         />
         <div className="max-w-6xl mx-auto px-6 w-full py-20 grid md:grid-cols-2 gap-16 items-center">
-          <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="h-px w-12 bg-gold" />
-              <span className="text-gold font-body text-sm tracking-[0.2em] uppercase">Бизнес-коуч</span>
+          {/* ФОТО — слева */}
+          <div className="relative animate-fade-in hidden md:block" style={{ animationDelay: "0.1s" }}>
+            <div className="absolute -inset-4 border border-gold/20" />
+            <div className="absolute -inset-8 border border-gold/10" />
+            <img
+              src={HERO_IMAGE}
+              alt="Алина Тер-Акопова"
+              className="relative w-full object-cover object-top aspect-[3/4]"
+              style={{ objectPosition: "50% 10%" }}
+            />
+            <div className="absolute bottom-6 -right-6 bg-gold px-6 py-4">
+              <div className="font-display text-2xl font-semibold text-navy">ICF</div>
+              <div className="text-navy/70 text-xs font-body tracking-wide mt-0.5">Сертифицированный коуч</div>
             </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light text-cream leading-tight mb-6">
-              Алина<br />
-              <span className="italic font-normal">Тер-Акопова</span>
+          </div>
+          {/* ТЕКСТ — справа */}
+          <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px w-12 bg-gold" />
+              <span className="text-gold font-body text-sm tracking-[0.2em] uppercase">Алина Тер-Акопова</span>
+            </div>
+            <h1 className="font-display text-4xl md:text-5xl font-light text-cream leading-tight mb-3">
+              Executive коуч,
             </h1>
-            <p className="text-cream/70 font-body text-lg leading-relaxed mb-10 max-w-md">
-              Помогаю руководителям и предпринимателям достигать целей, выстраивать системы и принимать решения с ясностью.
+            <h1 className="font-display text-4xl md:text-5xl font-light text-cream leading-tight mb-3">
+              фасилитатор,
+            </h1>
+            <h1 className="font-display text-4xl md:text-5xl italic font-normal text-gold leading-tight mb-8">
+              Бизнес-тренер
+            </h1>
+            <p className="text-cream/70 font-body text-lg leading-relaxed mb-10">
+              Для топ-руководителей и их команд
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => scrollTo("контакты")}
-                className="bg-gold text-navy font-body font-semibold px-8 py-3 hover:bg-cream transition-all duration-300 tracking-wide text-sm"
-              >
-                Записаться на сессию
-              </button>
+            <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollTo("продукты")}
-                className="border border-cream/40 text-cream/80 font-body px-8 py-3 hover:border-gold hover:text-gold transition-all duration-300 text-sm tracking-wide"
+                className="border border-gold text-gold font-body px-8 py-3.5 hover:bg-gold hover:text-navy transition-all duration-300 text-sm tracking-wide text-left"
               >
-                Узнать больше
+                Узнать подробнее об экспертизе
+              </button>
+              <button
+                onClick={() => scrollTo("контакты")}
+                className="bg-gold text-navy font-body font-semibold px-8 py-3.5 hover:bg-cream transition-all duration-300 tracking-wide text-sm text-left"
+              >
+                Записаться на химическую сессию
               </button>
             </div>
             <div className="mt-14 flex gap-10">
@@ -178,19 +199,6 @@ export default function Index() {
                   <div className="text-cream/50 text-xs font-body mt-1 tracking-wide">{label}</div>
                 </div>
               ))}
-            </div>
-          </div>
-          <div className="relative animate-fade-in hidden md:block" style={{ animationDelay: "0.3s" }}>
-            <div className="absolute -inset-4 border border-gold/20" />
-            <div className="absolute -inset-8 border border-gold/10" />
-            <img
-              src={HERO_IMAGE}
-              alt="Алина Тер-Акопова"
-              className="relative w-full object-cover aspect-[3/4] grayscale"
-            />
-            <div className="absolute bottom-6 -left-6 bg-gold px-6 py-4">
-              <div className="font-display text-2xl font-semibold text-navy">ICF</div>
-              <div className="text-navy/70 text-xs font-body tracking-wide mt-0.5">Сертифицированный коуч</div>
             </div>
           </div>
         </div>
