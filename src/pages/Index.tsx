@@ -174,15 +174,34 @@ export default function Index() {
 
           {/* ФОТО — слева */}
           <div className="relative hidden md:flex justify-center items-end h-full animate-fade-in order-1" style={{ animationDelay: "0.3s" }}>
+            {/* золотое свечение за фото */}
+            <div className="absolute inset-0 pointer-events-none" style={{
+              background: `radial-gradient(ellipse 70% 60% at 50% 40%, rgba(180,130,60,0.15) 0%, transparent 70%)`,
+              zIndex: 0
+            }} />
             <img
               src={HERO_IMAGE}
               alt="Алина Тер-Акопова"
-              className="object-cover object-top w-full"
-              style={{ maxHeight: "90vh", maskImage: "linear-gradient(to bottom, white 70%, transparent 100%)" }}
+              className="object-cover object-top w-full relative"
+              style={{
+                maxHeight: "92vh",
+                zIndex: 1,
+                maskImage: `
+                  linear-gradient(to bottom, transparent 0%, black 8%, black 72%, transparent 100%),
+                  linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)
+                `,
+                maskComposite: "intersect",
+                WebkitMaskImage: `
+                  linear-gradient(to bottom, transparent 0%, black 8%, black 72%, transparent 100%),
+                  linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)
+                `,
+                WebkitMaskComposite: "source-in",
+                filter: "contrast(1.05) brightness(1.05)",
+              }}
             />
             {/* бейдж */}
-            <div className="absolute bottom-10 right-0 rounded-lg px-5 py-4 max-w-[220px]"
-              style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(12px)", border: `1px solid ${BORDER}` }}>
+            <div className="absolute bottom-12 right-4 rounded-lg px-5 py-4 max-w-[220px]"
+              style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(16px)", border: `1px solid ${GOLD}33`, zIndex: 2 }}>
               <p className="text-sm font-light leading-snug" style={{ color: "rgba(255,255,255,0.85)" }}>
                 Более 1500 часов индивидуального коучинга за последние 5 лет
               </p>
