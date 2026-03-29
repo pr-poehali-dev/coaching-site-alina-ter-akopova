@@ -134,6 +134,8 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
                 maxHeight: "88vh",
                 zIndex: 1,
                 filter: "drop-shadow(0 0 40px rgba(180,135,55,0.15)) drop-shadow(0 0 80px rgba(180,135,55,0.08))",
+                maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+                WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
               }}
             />
             <div className="absolute bottom-8 right-4 rounded-lg px-5 py-4 max-w-[220px]"
