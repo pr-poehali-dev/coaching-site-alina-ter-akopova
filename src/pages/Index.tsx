@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/2d30cba3-c867-4b7e-a3dd-90b59ba425fb/files/66792f48-00d1-4f5f-a209-0e33dc43c872.jpg";
+const HERO_IMAGE = "https://cdn.poehali.dev/projects/2d30cba3-c867-4b7e-a3dd-90b59ba425fb/bucket/d154da29-d981-47f6-90c2-c47b15ba31aa.jpg";
 
 const CLIENTS = [
   { name: "Мария Соколова", role: "CEO, TechVenture", text: "Работа с Алиной изменила мой подход к управлению командой. За 3 месяца мы выросли на 40%." },
