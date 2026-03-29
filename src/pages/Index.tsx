@@ -174,10 +174,19 @@ export default function Index() {
 
           {/* ФОТО — слева */}
           <div className="relative hidden md:flex justify-center items-end h-full animate-fade-in order-1" style={{ animationDelay: "0.3s" }}>
-            {/* золотое свечение за фото */}
-            <div className="absolute inset-0 pointer-events-none" style={{
-              background: `radial-gradient(ellipse 70% 60% at 50% 40%, rgba(180,130,60,0.15) 0%, transparent 70%)`,
-              zIndex: 0
+            {/* свечение-силуэт по контуру человека */}
+            <div className="absolute pointer-events-none" style={{
+              inset: "5% 10%",
+              background: `radial-gradient(ellipse 55% 75% at 48% 38%, rgba(180,135,55,0.22) 0%, rgba(180,135,55,0.08) 45%, transparent 70%)`,
+              filter: "blur(24px)",
+              zIndex: 0,
+            }} />
+            {/* дополнительный контурный ореол */}
+            <div className="absolute pointer-events-none" style={{
+              inset: "10% 15%",
+              background: `radial-gradient(ellipse 40% 60% at 48% 32%, rgba(220,170,80,0.12) 0%, transparent 65%)`,
+              filter: "blur(40px)",
+              zIndex: 0,
             }} />
             <img
               src={HERO_IMAGE}
@@ -187,21 +196,17 @@ export default function Index() {
                 maxHeight: "92vh",
                 zIndex: 1,
                 maskImage: `
-                  linear-gradient(to bottom, transparent 0%, black 8%, black 72%, transparent 100%),
-                  linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)
+                  radial-gradient(ellipse 78% 88% at 50% 42%, black 30%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 70%, transparent 88%)
                 `,
-                maskComposite: "intersect",
                 WebkitMaskImage: `
-                  linear-gradient(to bottom, transparent 0%, black 8%, black 72%, transparent 100%),
-                  linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)
+                  radial-gradient(ellipse 78% 88% at 50% 42%, black 30%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 70%, transparent 88%)
                 `,
-                WebkitMaskComposite: "source-in",
-                filter: "contrast(1.05) brightness(1.05)",
+                filter: "contrast(1.08) brightness(1.02) saturate(0.9)",
               }}
             />
             {/* бейдж */}
             <div className="absolute bottom-12 right-4 rounded-lg px-5 py-4 max-w-[220px]"
-              style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(16px)", border: `1px solid ${GOLD}33`, zIndex: 2 }}>
+              style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(16px)", border: `1px solid ${GOLD}44`, zIndex: 2 }}>
               <p className="text-sm font-light leading-snug" style={{ color: "rgba(255,255,255,0.85)" }}>
                 Более 1500 часов индивидуального коучинга за последние 5 лет
               </p>
