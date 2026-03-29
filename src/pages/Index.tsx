@@ -144,11 +144,15 @@ export default function Index() {
               </button>
             </div>
 
-            <div className="flex gap-12 border-t border-[#f0f0f0] pt-10">
-              {[["8+", "лет практики"], ["200+", "клиентов"], ["94%", "достигают цели"]].map(([num, label]) => (
-                <div key={label}>
-                  <div className="font-display text-4xl font-light text-[#0f0f0f]">{num}</div>
-                  <div className="text-[#aaa] text-xs font-body font-light mt-1 tracking-wide">{label}</div>
+            <div className="grid grid-cols-3 gap-0 border-t border-[#f0f0f0] pt-10">
+              {[
+                ["Более 12", "Количество лет\nв практике"],
+                ["В списках Forbes", "Самый известный\nклиент"],
+                ["СК «Олимпийский»", "Самая большая\nаудитория"],
+              ].map(([num, label]) => (
+                <div key={num} className="pr-6">
+                  <div className="font-display text-2xl font-light text-[#0f0f0f] leading-tight mb-1">{num}</div>
+                  <div className="text-[#aaa] text-[11px] font-body font-light tracking-wide whitespace-pre-line leading-snug">{label}</div>
                 </div>
               ))}
             </div>
