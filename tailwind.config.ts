@@ -21,7 +21,9 @@ export default {
     extend: {
       fontFamily: {
         display: ['Cormorant', 'serif'],
-        body: ['Golos Text', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
